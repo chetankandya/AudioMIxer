@@ -1,0 +1,7 @@
+amix_fadd_32ns_32ns_32_5_full_dsp_1
+amix_fmul_32ns_32ns_32_4_max_dsp_1
+amix_num_lp
+amix_num_bp
+amix_num_hp
+amix_control_s_axi
+amix

@@ -1,0 +1,11 @@
+HLS_SRC := amix.cpp
+HLS_TOP := amix
+RTL_TOP := overlay
+.DEFAULT_GOAL := default
+
+%.mk:
+	wget https://mygit.th-deg.de/gaydos/pynq-code/-/raw/master/$@
+
+include hls.mk rtl.mk upload.mk
+
+default: $(BITSTREAM) $(SHORTCUTS)

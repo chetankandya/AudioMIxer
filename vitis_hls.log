@@ -1,0 +1,40 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'hk19197' on host 'joan.th-deg.de' (Linux_x86_64 version 5.12.10-arch1-1) on Sun Jun 20 15:42:07 CEST 2021
+INFO: [HLS 200-10] In directory '/home/hk19197/awesomeaudiomixer'
+Sourcing Tcl script '/home/hk19197/awesomeaudiomixer/hls-proj/s/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project hls-proj 
+INFO: [HLS 200-10] Opening project '/home/hk19197/awesomeaudiomixer/hls-proj'.
+INFO: [HLS 200-1510] Running: set_top amix 
+INFO: [HLS 200-1510] Running: add_files amix.cpp 
+INFO: [HLS 200-10] Adding design file 'amix.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb main.cpp 
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution s -flow_target vitis 
+INFO: [HLS 200-10] Opening solution '/home/hk19197/awesomeaudiomixer/hls-proj/s'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_addr64=0
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10ns -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64=0 -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog 
+INFO: [HLS 200-1510] Running: set_directive_top -name amix amix 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../main.cpp in debug mode
+   Generating csim.exe
+0.18674
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.49 seconds. CPU system time: 0.86 seconds. Elapsed time: 1.32 seconds; current allocated memory: 100.071 MB.

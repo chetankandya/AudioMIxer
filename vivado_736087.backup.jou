@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jun 20 14:08:19 2021
+# Process ID: 736087
+# Current directory: /home/hk19197/awesomeaudiomixer
+# Command line: vivado -mode tcl -source rtl.tcl
+# Log file: /home/hk19197/awesomeaudiomixer/vivado.log
+# Journal file: /home/hk19197/awesomeaudiomixer/vivado.jou
+#-----------------------------------------------------------
+source rtl.tcl
+eexit

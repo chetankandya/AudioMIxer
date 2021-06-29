@@ -1,0 +1,654 @@
+
+
+================================================================
+== Vitis HLS Report for 'amix'
+================================================================
+* Date:           Sun Jun 20 14:54:03 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        hls-proj
+* Solution:       s (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  14.512 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      228|      228|  3.309 us|  3.309 us|  229|  229|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_57_1  |      213|      213|        14|          4|          1|    51|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 14
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 29
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 14, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 16 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 2 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty"   --->   Operation 31 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_1, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %sample_in"   --->   Operation 33 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %sample_in, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_6, void @empty_5, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %sample_in, void @empty_8, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gain_lp"   --->   Operation 36 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_lp, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_6, void @empty_9, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_lp, void @empty_8, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gain_bp"   --->   Operation 39 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_bp, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_6, void @empty_4, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_bp, void @empty_8, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gain_hp"   --->   Operation 42 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_hp, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_6, void @empty_3, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gain_hp, void @empty_8, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_6, void @empty_2, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (1.00ns)   --->   "%gain_hp_read = read i32 @_ssdm_op_Read.ap_none.float, i32 %gain_hp" [amix.cpp:2]   --->   Operation 46 'read' 'gain_hp_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 47 [1/1] (1.00ns)   --->   "%gain_bp_read = read i32 @_ssdm_op_Read.ap_none.float, i32 %gain_bp" [amix.cpp:2]   --->   Operation 47 'read' 'gain_bp_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 48 [1/1] (1.00ns)   --->   "%gain_lp_read = read i32 @_ssdm_op_Read.ap_none.float, i32 %gain_lp" [amix.cpp:2]   --->   Operation 48 'read' 'gain_lp_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 49 [1/1] (1.00ns)   --->   "%sample_in_read = read i32 @_ssdm_op_Read.ap_none.float, i32 %sample_in" [amix.cpp:2]   --->   Operation 49 'read' 'sample_in_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 50 [1/1] (1.58ns)   --->   "%br_ln57 = br void" [amix.cpp:57]   --->   Operation 50 'br' 'br_ln57' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 7.25>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%i = phi i7 50, void, i7 %add_ln57, void" [amix.cpp:57]   --->   Operation 51 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%sample_hp = phi i32 0, void, i32 %sample_hp_2, void"   --->   Operation 52 'phi' 'sample_hp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%sample_bp = phi i32 0, void, i32 %sample_bp_2, void"   --->   Operation 53 'phi' 'sample_bp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%sample_lp = phi i32 0, void, i32 %sample_lp_2, void"   --->   Operation 54 'phi' 'sample_lp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %i, i32 6" [amix.cpp:57]   --->   Operation 55 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 51, i64 51, i64 51"   --->   Operation 56 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln57 = br i1 %tmp, void %.split, void" [amix.cpp:57]   --->   Operation 57 'br' 'br_ln57' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln57 = trunc i7 %i" [amix.cpp:57]   --->   Operation 58 'trunc' 'trunc_ln57' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%specpipeline_ln51 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_10" [amix.cpp:51]   --->   Operation 59 'specpipeline' 'specpipeline_ln51' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%specloopname_ln51 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [amix.cpp:51]   --->   Operation 60 'specloopname' 'specloopname_ln51' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (1.48ns)   --->   "%icmp_ln63 = icmp_eq  i7 %i, i7 0" [amix.cpp:63]   --->   Operation 61 'icmp' 'icmp_ln63' <Predicate = (!tmp)> <Delay = 1.48> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln63 = br i1 %icmp_ln63, void, void" [amix.cpp:63]   --->   Operation 62 'br' 'br_ln63' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (1.48ns)   --->   "%switch_ln66 = switch i6 %trunc_ln57, void %branch100, i6 1, void %branch51, i6 2, void %branch52, i6 3, void %branch53, i6 4, void %branch54, i6 5, void %branch55, i6 6, void %branch56, i6 7, void %branch57, i6 8, void %branch58, i6 9, void %branch59, i6 10, void %branch60, i6 11, void %branch61, i6 12, void %branch62, i6 13, void %branch63, i6 14, void %branch64, i6 15, void %branch65, i6 16, void %branch66, i6 17, void %branch67, i6 18, void %branch68, i6 19, void %branch69, i6 20, void %branch70, i6 21, void %branch71, i6 22, void %branch72, i6 23, void %branch73, i6 24, void %branch74, i6 25, void %branch75, i6 26, void %branch76, i6 27, void %branch77, i6 28, void %branch78, i6 29, void %branch79, i6 30, void %branch80, i6 31, void %branch81, i6 32, void %branch82, i6 33, void %branch83, i6 34, void %branch84, i6 35, void %branch85, i6 36, void %branch86, i6 37, void %branch87, i6 38, void %branch88, i6 39, void %branch89, i6 40, void %branch90, i6 41, void %branch91, i6 42, void %branch92, i6 43, void %branch93, i6 44, void %branch94, i6 45, void %branch95, i6 46, void %branch96, i6 47, void %branch97, i6 48, void %branch98, i6 49, void %branch99" [amix.cpp:66]   --->   Operation 63 'switch' 'switch_ln66' <Predicate = (!tmp & !icmp_ln63)> <Delay = 1.48>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%shift_reg_48_load = load i32 %shift_reg_48" [amix.cpp:66]   --->   Operation 64 'load' 'shift_reg_48_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 49)> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 65 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 49)> <Delay = 3.17>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%shift_reg_47_load = load i32 %shift_reg_47" [amix.cpp:66]   --->   Operation 66 'load' 'shift_reg_47_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 48)> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 67 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 48)> <Delay = 3.17>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%shift_reg_46_load = load i32 %shift_reg_46" [amix.cpp:66]   --->   Operation 68 'load' 'shift_reg_46_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 47)> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 69 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 47)> <Delay = 3.17>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%shift_reg_45_load = load i32 %shift_reg_45" [amix.cpp:66]   --->   Operation 70 'load' 'shift_reg_45_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 46)> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 71 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 46)> <Delay = 3.17>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%shift_reg_44_load = load i32 %shift_reg_44" [amix.cpp:66]   --->   Operation 72 'load' 'shift_reg_44_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 45)> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 73 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 45)> <Delay = 3.17>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%shift_reg_43_load = load i32 %shift_reg_43" [amix.cpp:66]   --->   Operation 74 'load' 'shift_reg_43_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 44)> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 75 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 44)> <Delay = 3.17>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%shift_reg_42_load = load i32 %shift_reg_42" [amix.cpp:66]   --->   Operation 76 'load' 'shift_reg_42_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 43)> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 77 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 43)> <Delay = 3.17>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%shift_reg_41_load = load i32 %shift_reg_41" [amix.cpp:66]   --->   Operation 78 'load' 'shift_reg_41_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 42)> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 79 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 42)> <Delay = 3.17>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%shift_reg_40_load = load i32 %shift_reg_40" [amix.cpp:66]   --->   Operation 80 'load' 'shift_reg_40_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 41)> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 81 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 41)> <Delay = 3.17>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%shift_reg_39_load = load i32 %shift_reg_39" [amix.cpp:66]   --->   Operation 82 'load' 'shift_reg_39_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 40)> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 83 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 40)> <Delay = 3.17>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%shift_reg_38_load = load i32 %shift_reg_38" [amix.cpp:66]   --->   Operation 84 'load' 'shift_reg_38_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 39)> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 85 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 39)> <Delay = 3.17>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%shift_reg_37_load = load i32 %shift_reg_37" [amix.cpp:66]   --->   Operation 86 'load' 'shift_reg_37_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 38)> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 87 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 38)> <Delay = 3.17>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%shift_reg_36_load = load i32 %shift_reg_36" [amix.cpp:66]   --->   Operation 88 'load' 'shift_reg_36_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 37)> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 89 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 37)> <Delay = 3.17>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%shift_reg_35_load = load i32 %shift_reg_35" [amix.cpp:66]   --->   Operation 90 'load' 'shift_reg_35_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 36)> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 91 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 36)> <Delay = 3.17>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%shift_reg_34_load = load i32 %shift_reg_34" [amix.cpp:66]   --->   Operation 92 'load' 'shift_reg_34_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 35)> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 93 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 35)> <Delay = 3.17>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%shift_reg_33_load = load i32 %shift_reg_33" [amix.cpp:66]   --->   Operation 94 'load' 'shift_reg_33_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 34)> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 95 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 34)> <Delay = 3.17>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%shift_reg_32_load = load i32 %shift_reg_32" [amix.cpp:66]   --->   Operation 96 'load' 'shift_reg_32_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 33)> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 97 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 33)> <Delay = 3.17>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%shift_reg_31_load = load i32 %shift_reg_31" [amix.cpp:66]   --->   Operation 98 'load' 'shift_reg_31_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 32)> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 99 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 32)> <Delay = 3.17>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%shift_reg_30_load = load i32 %shift_reg_30" [amix.cpp:66]   --->   Operation 100 'load' 'shift_reg_30_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 31)> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 101 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 31)> <Delay = 3.17>
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "%shift_reg_29_load = load i32 %shift_reg_29" [amix.cpp:66]   --->   Operation 102 'load' 'shift_reg_29_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 30)> <Delay = 0.00>
+ST_2 : Operation 103 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 103 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 30)> <Delay = 3.17>
+ST_2 : Operation 104 [1/1] (0.00ns)   --->   "%shift_reg_28_load = load i32 %shift_reg_28" [amix.cpp:66]   --->   Operation 104 'load' 'shift_reg_28_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 29)> <Delay = 0.00>
+ST_2 : Operation 105 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 105 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 29)> <Delay = 3.17>
+ST_2 : Operation 106 [1/1] (0.00ns)   --->   "%shift_reg_27_load = load i32 %shift_reg_27" [amix.cpp:66]   --->   Operation 106 'load' 'shift_reg_27_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 28)> <Delay = 0.00>
+ST_2 : Operation 107 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 107 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 28)> <Delay = 3.17>
+ST_2 : Operation 108 [1/1] (0.00ns)   --->   "%shift_reg_26_load = load i32 %shift_reg_26" [amix.cpp:66]   --->   Operation 108 'load' 'shift_reg_26_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 27)> <Delay = 0.00>
+ST_2 : Operation 109 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 109 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 27)> <Delay = 3.17>
+ST_2 : Operation 110 [1/1] (0.00ns)   --->   "%shift_reg_25_load = load i32 %shift_reg_25" [amix.cpp:66]   --->   Operation 110 'load' 'shift_reg_25_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 26)> <Delay = 0.00>
+ST_2 : Operation 111 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 111 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 26)> <Delay = 3.17>
+ST_2 : Operation 112 [1/1] (0.00ns)   --->   "%shift_reg_24_load = load i32 %shift_reg_24" [amix.cpp:66]   --->   Operation 112 'load' 'shift_reg_24_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 25)> <Delay = 0.00>
+ST_2 : Operation 113 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 113 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 25)> <Delay = 3.17>
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "%shift_reg_23_load = load i32 %shift_reg_23" [amix.cpp:66]   --->   Operation 114 'load' 'shift_reg_23_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 24)> <Delay = 0.00>
+ST_2 : Operation 115 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 115 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 24)> <Delay = 3.17>
+ST_2 : Operation 116 [1/1] (0.00ns)   --->   "%shift_reg_22_load = load i32 %shift_reg_22" [amix.cpp:66]   --->   Operation 116 'load' 'shift_reg_22_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 23)> <Delay = 0.00>
+ST_2 : Operation 117 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 117 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 23)> <Delay = 3.17>
+ST_2 : Operation 118 [1/1] (0.00ns)   --->   "%shift_reg_21_load = load i32 %shift_reg_21" [amix.cpp:66]   --->   Operation 118 'load' 'shift_reg_21_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 22)> <Delay = 0.00>
+ST_2 : Operation 119 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 119 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 22)> <Delay = 3.17>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "%shift_reg_20_load = load i32 %shift_reg_20" [amix.cpp:66]   --->   Operation 120 'load' 'shift_reg_20_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 21)> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 121 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 21)> <Delay = 3.17>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "%shift_reg_19_load = load i32 %shift_reg_19" [amix.cpp:66]   --->   Operation 122 'load' 'shift_reg_19_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 20)> <Delay = 0.00>
+ST_2 : Operation 123 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 123 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 20)> <Delay = 3.17>
+ST_2 : Operation 124 [1/1] (0.00ns)   --->   "%shift_reg_18_load = load i32 %shift_reg_18" [amix.cpp:66]   --->   Operation 124 'load' 'shift_reg_18_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 19)> <Delay = 0.00>
+ST_2 : Operation 125 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 125 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 19)> <Delay = 3.17>
+ST_2 : Operation 126 [1/1] (0.00ns)   --->   "%shift_reg_17_load = load i32 %shift_reg_17" [amix.cpp:66]   --->   Operation 126 'load' 'shift_reg_17_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 18)> <Delay = 0.00>
+ST_2 : Operation 127 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 127 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 18)> <Delay = 3.17>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "%shift_reg_16_load = load i32 %shift_reg_16" [amix.cpp:66]   --->   Operation 128 'load' 'shift_reg_16_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 17)> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 129 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 17)> <Delay = 3.17>
+ST_2 : Operation 130 [1/1] (0.00ns)   --->   "%shift_reg_15_load = load i32 %shift_reg_15" [amix.cpp:66]   --->   Operation 130 'load' 'shift_reg_15_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 16)> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 131 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 16)> <Delay = 3.17>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "%shift_reg_14_load = load i32 %shift_reg_14" [amix.cpp:66]   --->   Operation 132 'load' 'shift_reg_14_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 15)> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 133 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 15)> <Delay = 3.17>
+ST_2 : Operation 134 [1/1] (0.00ns)   --->   "%shift_reg_13_load = load i32 %shift_reg_13" [amix.cpp:66]   --->   Operation 134 'load' 'shift_reg_13_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 14)> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 135 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 14)> <Delay = 3.17>
+ST_2 : Operation 136 [1/1] (0.00ns)   --->   "%shift_reg_12_load = load i32 %shift_reg_12" [amix.cpp:66]   --->   Operation 136 'load' 'shift_reg_12_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 13)> <Delay = 0.00>
+ST_2 : Operation 137 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 137 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 13)> <Delay = 3.17>
+ST_2 : Operation 138 [1/1] (0.00ns)   --->   "%shift_reg_11_load = load i32 %shift_reg_11" [amix.cpp:66]   --->   Operation 138 'load' 'shift_reg_11_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 12)> <Delay = 0.00>
+ST_2 : Operation 139 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 139 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 12)> <Delay = 3.17>
+ST_2 : Operation 140 [1/1] (0.00ns)   --->   "%shift_reg_10_load = load i32 %shift_reg_10" [amix.cpp:66]   --->   Operation 140 'load' 'shift_reg_10_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 11)> <Delay = 0.00>
+ST_2 : Operation 141 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 141 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 11)> <Delay = 3.17>
+ST_2 : Operation 142 [1/1] (0.00ns)   --->   "%shift_reg_9_load = load i32 %shift_reg_9" [amix.cpp:66]   --->   Operation 142 'load' 'shift_reg_9_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 10)> <Delay = 0.00>
+ST_2 : Operation 143 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 143 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 10)> <Delay = 3.17>
+ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%shift_reg_8_load = load i32 %shift_reg_8" [amix.cpp:66]   --->   Operation 144 'load' 'shift_reg_8_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 9)> <Delay = 0.00>
+ST_2 : Operation 145 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 145 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 9)> <Delay = 3.17>
+ST_2 : Operation 146 [1/1] (0.00ns)   --->   "%shift_reg_7_load = load i32 %shift_reg_7" [amix.cpp:66]   --->   Operation 146 'load' 'shift_reg_7_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 8)> <Delay = 0.00>
+ST_2 : Operation 147 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 147 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 8)> <Delay = 3.17>
+ST_2 : Operation 148 [1/1] (0.00ns)   --->   "%shift_reg_6_load = load i32 %shift_reg_6" [amix.cpp:66]   --->   Operation 148 'load' 'shift_reg_6_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 7)> <Delay = 0.00>
+ST_2 : Operation 149 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 149 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 7)> <Delay = 3.17>
+ST_2 : Operation 150 [1/1] (0.00ns)   --->   "%shift_reg_5_load = load i32 %shift_reg_5" [amix.cpp:66]   --->   Operation 150 'load' 'shift_reg_5_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 6)> <Delay = 0.00>
+ST_2 : Operation 151 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 151 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 6)> <Delay = 3.17>
+ST_2 : Operation 152 [1/1] (0.00ns)   --->   "%shift_reg_4_load = load i32 %shift_reg_4" [amix.cpp:66]   --->   Operation 152 'load' 'shift_reg_4_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 5)> <Delay = 0.00>
+ST_2 : Operation 153 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 153 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 5)> <Delay = 3.17>
+ST_2 : Operation 154 [1/1] (0.00ns)   --->   "%shift_reg_3_load = load i32 %shift_reg_3" [amix.cpp:66]   --->   Operation 154 'load' 'shift_reg_3_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 4)> <Delay = 0.00>
+ST_2 : Operation 155 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 155 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 4)> <Delay = 3.17>
+ST_2 : Operation 156 [1/1] (0.00ns)   --->   "%shift_reg_2_load = load i32 %shift_reg_2" [amix.cpp:66]   --->   Operation 156 'load' 'shift_reg_2_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 3)> <Delay = 0.00>
+ST_2 : Operation 157 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 157 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 3)> <Delay = 3.17>
+ST_2 : Operation 158 [1/1] (0.00ns)   --->   "%shift_reg_1_load = load i32 %shift_reg_1" [amix.cpp:66]   --->   Operation 158 'load' 'shift_reg_1_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 2)> <Delay = 0.00>
+ST_2 : Operation 159 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 159 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 2)> <Delay = 3.17>
+ST_2 : Operation 160 [1/1] (0.00ns)   --->   "%shift_reg_0_load = load i32 %shift_reg_0" [amix.cpp:66]   --->   Operation 160 'load' 'shift_reg_0_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 1)> <Delay = 0.00>
+ST_2 : Operation 161 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 161 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 1)> <Delay = 3.17>
+ST_2 : Operation 162 [1/1] (0.00ns)   --->   "%shift_reg_49_load = load i32 %shift_reg_49" [amix.cpp:66]   --->   Operation 162 'load' 'shift_reg_49_load' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 63) | (!tmp & !icmp_ln63 & trunc_ln57 == 62) | (!tmp & !icmp_ln63 & trunc_ln57 == 61) | (!tmp & !icmp_ln63 & trunc_ln57 == 60) | (!tmp & !icmp_ln63 & trunc_ln57 == 59) | (!tmp & !icmp_ln63 & trunc_ln57 == 58) | (!tmp & !icmp_ln63 & trunc_ln57 == 57) | (!tmp & !icmp_ln63 & trunc_ln57 == 56) | (!tmp & !icmp_ln63 & trunc_ln57 == 55) | (!tmp & !icmp_ln63 & trunc_ln57 == 54) | (!tmp & !icmp_ln63 & trunc_ln57 == 53) | (!tmp & !icmp_ln63 & trunc_ln57 == 52) | (!tmp & !icmp_ln63 & trunc_ln57 == 51) | (!tmp & !icmp_ln63 & trunc_ln57 == 50) | (!tmp & !icmp_ln63 & trunc_ln57 == 0)> <Delay = 0.00>
+ST_2 : Operation 163 [1/1] (3.17ns)   --->   "%br_ln66 = br void" [amix.cpp:66]   --->   Operation 163 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 63) | (!tmp & !icmp_ln63 & trunc_ln57 == 62) | (!tmp & !icmp_ln63 & trunc_ln57 == 61) | (!tmp & !icmp_ln63 & trunc_ln57 == 60) | (!tmp & !icmp_ln63 & trunc_ln57 == 59) | (!tmp & !icmp_ln63 & trunc_ln57 == 58) | (!tmp & !icmp_ln63 & trunc_ln57 == 57) | (!tmp & !icmp_ln63 & trunc_ln57 == 56) | (!tmp & !icmp_ln63 & trunc_ln57 == 55) | (!tmp & !icmp_ln63 & trunc_ln57 == 54) | (!tmp & !icmp_ln63 & trunc_ln57 == 53) | (!tmp & !icmp_ln63 & trunc_ln57 == 52) | (!tmp & !icmp_ln63 & trunc_ln57 == 51) | (!tmp & !icmp_ln63 & trunc_ln57 == 50) | (!tmp & !icmp_ln63 & trunc_ln57 == 0)> <Delay = 3.17>
+ST_2 : Operation 164 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 164 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 49)> <Delay = 0.00>
+ST_2 : Operation 165 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 165 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 48)> <Delay = 0.00>
+ST_2 : Operation 166 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 166 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 47)> <Delay = 0.00>
+ST_2 : Operation 167 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 167 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 46)> <Delay = 0.00>
+ST_2 : Operation 168 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 168 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 45)> <Delay = 0.00>
+ST_2 : Operation 169 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 169 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 44)> <Delay = 0.00>
+ST_2 : Operation 170 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 170 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 43)> <Delay = 0.00>
+ST_2 : Operation 171 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 171 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 42)> <Delay = 0.00>
+ST_2 : Operation 172 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 172 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 41)> <Delay = 0.00>
+ST_2 : Operation 173 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 173 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 40)> <Delay = 0.00>
+ST_2 : Operation 174 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 174 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 39)> <Delay = 0.00>
+ST_2 : Operation 175 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 175 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 38)> <Delay = 0.00>
+ST_2 : Operation 176 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 176 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 37)> <Delay = 0.00>
+ST_2 : Operation 177 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 177 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 36)> <Delay = 0.00>
+ST_2 : Operation 178 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 178 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 35)> <Delay = 0.00>
+ST_2 : Operation 179 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 179 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 34)> <Delay = 0.00>
+ST_2 : Operation 180 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 180 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 33)> <Delay = 0.00>
+ST_2 : Operation 181 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 181 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 32)> <Delay = 0.00>
+ST_2 : Operation 182 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 182 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 31)> <Delay = 0.00>
+ST_2 : Operation 183 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 183 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 30)> <Delay = 0.00>
+ST_2 : Operation 184 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 184 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 29)> <Delay = 0.00>
+ST_2 : Operation 185 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 185 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 28)> <Delay = 0.00>
+ST_2 : Operation 186 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 186 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 27)> <Delay = 0.00>
+ST_2 : Operation 187 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 187 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 26)> <Delay = 0.00>
+ST_2 : Operation 188 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 188 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 25)> <Delay = 0.00>
+ST_2 : Operation 189 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 189 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 24)> <Delay = 0.00>
+ST_2 : Operation 190 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 190 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 23)> <Delay = 0.00>
+ST_2 : Operation 191 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 191 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 22)> <Delay = 0.00>
+ST_2 : Operation 192 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 192 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 21)> <Delay = 0.00>
+ST_2 : Operation 193 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 193 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 20)> <Delay = 0.00>
+ST_2 : Operation 194 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 194 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 19)> <Delay = 0.00>
+ST_2 : Operation 195 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 195 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 18)> <Delay = 0.00>
+ST_2 : Operation 196 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 196 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 17)> <Delay = 0.00>
+ST_2 : Operation 197 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 197 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 16)> <Delay = 0.00>
+ST_2 : Operation 198 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 198 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 15)> <Delay = 0.00>
+ST_2 : Operation 199 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 199 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 14)> <Delay = 0.00>
+ST_2 : Operation 200 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 200 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 13)> <Delay = 0.00>
+ST_2 : Operation 201 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 201 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 12)> <Delay = 0.00>
+ST_2 : Operation 202 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 202 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 11)> <Delay = 0.00>
+ST_2 : Operation 203 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 203 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 10)> <Delay = 0.00>
+ST_2 : Operation 204 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 204 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 9)> <Delay = 0.00>
+ST_2 : Operation 205 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 205 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 8)> <Delay = 0.00>
+ST_2 : Operation 206 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 206 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 7)> <Delay = 0.00>
+ST_2 : Operation 207 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 207 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 6)> <Delay = 0.00>
+ST_2 : Operation 208 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 208 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 5)> <Delay = 0.00>
+ST_2 : Operation 209 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 209 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 4)> <Delay = 0.00>
+ST_2 : Operation 210 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 210 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 3)> <Delay = 0.00>
+ST_2 : Operation 211 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 211 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 2)> <Delay = 0.00>
+ST_2 : Operation 212 [1/1] (0.00ns)   --->   "%br_ln66 = br void %branch50" [amix.cpp:66]   --->   Operation 212 'br' 'br_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 1)> <Delay = 0.00>
+ST_2 : Operation 213 [1/1] (0.00ns)   --->   "%store_ln64 = store i32 %sample_in_read, i32 %shift_reg_0" [amix.cpp:64]   --->   Operation 213 'store' 'store_ln64' <Predicate = (!tmp & icmp_ln63)> <Delay = 0.00>
+ST_2 : Operation 214 [1/1] (1.58ns)   --->   "%br_ln64 = br void" [amix.cpp:64]   --->   Operation 214 'br' 'br_ln64' <Predicate = (!tmp & icmp_ln63)> <Delay = 1.58>
+
+State 3 <SV = 2> <Delay = 4.84>
+ST_3 : Operation 215 [1/1] (0.00ns)   --->   "%phi_ln66 = phi i32 %shift_reg_0_load, void %branch51, i32 %shift_reg_1_load, void %branch52, i32 %shift_reg_2_load, void %branch53, i32 %shift_reg_3_load, void %branch54, i32 %shift_reg_4_load, void %branch55, i32 %shift_reg_5_load, void %branch56, i32 %shift_reg_6_load, void %branch57, i32 %shift_reg_7_load, void %branch58, i32 %shift_reg_8_load, void %branch59, i32 %shift_reg_9_load, void %branch60, i32 %shift_reg_10_load, void %branch61, i32 %shift_reg_11_load, void %branch62, i32 %shift_reg_12_load, void %branch63, i32 %shift_reg_13_load, void %branch64, i32 %shift_reg_14_load, void %branch65, i32 %shift_reg_15_load, void %branch66, i32 %shift_reg_16_load, void %branch67, i32 %shift_reg_17_load, void %branch68, i32 %shift_reg_18_load, void %branch69, i32 %shift_reg_19_load, void %branch70, i32 %shift_reg_20_load, void %branch71, i32 %shift_reg_21_load, void %branch72, i32 %shift_reg_22_load, void %branch73, i32 %shift_reg_23_load, void %branch74, i32 %shift_reg_24_load, void %branch75, i32 %shift_reg_25_load, void %branch76, i32 %shift_reg_26_load, void %branch77, i32 %shift_reg_27_load, void %branch78, i32 %shift_reg_28_load, void %branch79, i32 %shift_reg_29_load, void %branch80, i32 %shift_reg_30_load, void %branch81, i32 %shift_reg_31_load, void %branch82, i32 %shift_reg_32_load, void %branch83, i32 %shift_reg_33_load, void %branch84, i32 %shift_reg_34_load, void %branch85, i32 %shift_reg_35_load, void %branch86, i32 %shift_reg_36_load, void %branch87, i32 %shift_reg_37_load, void %branch88, i32 %shift_reg_38_load, void %branch89, i32 %shift_reg_39_load, void %branch90, i32 %shift_reg_40_load, void %branch91, i32 %shift_reg_41_load, void %branch92, i32 %shift_reg_42_load, void %branch93, i32 %shift_reg_43_load, void %branch94, i32 %shift_reg_44_load, void %branch95, i32 %shift_reg_45_load, void %branch96, i32 %shift_reg_46_load, void %branch97, i32 %shift_reg_47_load, void %branch98, i32 %shift_reg_48_load, void %branch99, i32 %shift_reg_49_load, void %branch100" [amix.cpp:66]   --->   Operation 215 'phi' 'phi_ln66' <Predicate = (!tmp & !icmp_ln63)> <Delay = 0.00>
+ST_3 : Operation 216 [1/1] (1.48ns)   --->   "%switch_ln66 = switch i6 %trunc_ln57, void %branch50, i6 1, void %branch1, i6 2, void %branch2, i6 3, void %branch3, i6 4, void %branch4, i6 5, void %branch5, i6 6, void %branch6, i6 7, void %branch7, i6 8, void %branch8, i6 9, void %branch9, i6 10, void %branch10, i6 11, void %branch11, i6 12, void %branch12, i6 13, void %branch13, i6 14, void %branch14, i6 15, void %branch15, i6 16, void %branch16, i6 17, void %branch17, i6 18, void %branch18, i6 19, void %branch19, i6 20, void %branch20, i6 21, void %branch21, i6 22, void %branch22, i6 23, void %branch23, i6 24, void %branch24, i6 25, void %branch25, i6 26, void %branch26, i6 27, void %branch27, i6 28, void %branch28, i6 29, void %branch29, i6 30, void %branch30, i6 31, void %branch31, i6 32, void %branch32, i6 33, void %branch33, i6 34, void %branch34, i6 35, void %branch35, i6 36, void %branch36, i6 37, void %branch37, i6 38, void %branch38, i6 39, void %branch39, i6 40, void %branch40, i6 41, void %branch41, i6 42, void %branch42, i6 43, void %branch43, i6 44, void %branch44, i6 45, void %branch45, i6 46, void %branch46, i6 47, void %branch47, i6 48, void %branch48, i6 49, void %branch49" [amix.cpp:66]   --->   Operation 216 'switch' 'switch_ln66' <Predicate = (!tmp & !icmp_ln63)> <Delay = 1.48>
+ST_3 : Operation 217 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_49" [amix.cpp:66]   --->   Operation 217 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 49)> <Delay = 0.00>
+ST_3 : Operation 218 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_48" [amix.cpp:66]   --->   Operation 218 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 48)> <Delay = 0.00>
+ST_3 : Operation 219 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_47" [amix.cpp:66]   --->   Operation 219 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 47)> <Delay = 0.00>
+ST_3 : Operation 220 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_46" [amix.cpp:66]   --->   Operation 220 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 46)> <Delay = 0.00>
+ST_3 : Operation 221 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_45" [amix.cpp:66]   --->   Operation 221 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 45)> <Delay = 0.00>
+ST_3 : Operation 222 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_44" [amix.cpp:66]   --->   Operation 222 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 44)> <Delay = 0.00>
+ST_3 : Operation 223 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_43" [amix.cpp:66]   --->   Operation 223 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 43)> <Delay = 0.00>
+ST_3 : Operation 224 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_42" [amix.cpp:66]   --->   Operation 224 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 42)> <Delay = 0.00>
+ST_3 : Operation 225 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_41" [amix.cpp:66]   --->   Operation 225 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 41)> <Delay = 0.00>
+ST_3 : Operation 226 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_40" [amix.cpp:66]   --->   Operation 226 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 40)> <Delay = 0.00>
+ST_3 : Operation 227 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_39" [amix.cpp:66]   --->   Operation 227 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 39)> <Delay = 0.00>
+ST_3 : Operation 228 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_38" [amix.cpp:66]   --->   Operation 228 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 38)> <Delay = 0.00>
+ST_3 : Operation 229 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_37" [amix.cpp:66]   --->   Operation 229 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 37)> <Delay = 0.00>
+ST_3 : Operation 230 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_36" [amix.cpp:66]   --->   Operation 230 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 36)> <Delay = 0.00>
+ST_3 : Operation 231 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_35" [amix.cpp:66]   --->   Operation 231 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 35)> <Delay = 0.00>
+ST_3 : Operation 232 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_34" [amix.cpp:66]   --->   Operation 232 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 34)> <Delay = 0.00>
+ST_3 : Operation 233 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_33" [amix.cpp:66]   --->   Operation 233 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 33)> <Delay = 0.00>
+ST_3 : Operation 234 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_32" [amix.cpp:66]   --->   Operation 234 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 32)> <Delay = 0.00>
+ST_3 : Operation 235 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_31" [amix.cpp:66]   --->   Operation 235 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 31)> <Delay = 0.00>
+ST_3 : Operation 236 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_30" [amix.cpp:66]   --->   Operation 236 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 30)> <Delay = 0.00>
+ST_3 : Operation 237 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_29" [amix.cpp:66]   --->   Operation 237 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 29)> <Delay = 0.00>
+ST_3 : Operation 238 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_28" [amix.cpp:66]   --->   Operation 238 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 28)> <Delay = 0.00>
+ST_3 : Operation 239 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_27" [amix.cpp:66]   --->   Operation 239 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 27)> <Delay = 0.00>
+ST_3 : Operation 240 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_26" [amix.cpp:66]   --->   Operation 240 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 26)> <Delay = 0.00>
+ST_3 : Operation 241 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_25" [amix.cpp:66]   --->   Operation 241 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 25)> <Delay = 0.00>
+ST_3 : Operation 242 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_24" [amix.cpp:66]   --->   Operation 242 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 24)> <Delay = 0.00>
+ST_3 : Operation 243 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_23" [amix.cpp:66]   --->   Operation 243 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 23)> <Delay = 0.00>
+ST_3 : Operation 244 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_22" [amix.cpp:66]   --->   Operation 244 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 22)> <Delay = 0.00>
+ST_3 : Operation 245 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_21" [amix.cpp:66]   --->   Operation 245 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 21)> <Delay = 0.00>
+ST_3 : Operation 246 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_20" [amix.cpp:66]   --->   Operation 246 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 20)> <Delay = 0.00>
+ST_3 : Operation 247 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_19" [amix.cpp:66]   --->   Operation 247 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 19)> <Delay = 0.00>
+ST_3 : Operation 248 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_18" [amix.cpp:66]   --->   Operation 248 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 18)> <Delay = 0.00>
+ST_3 : Operation 249 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_17" [amix.cpp:66]   --->   Operation 249 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 17)> <Delay = 0.00>
+ST_3 : Operation 250 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_16" [amix.cpp:66]   --->   Operation 250 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 16)> <Delay = 0.00>
+ST_3 : Operation 251 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_15" [amix.cpp:66]   --->   Operation 251 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 15)> <Delay = 0.00>
+ST_3 : Operation 252 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_14" [amix.cpp:66]   --->   Operation 252 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 14)> <Delay = 0.00>
+ST_3 : Operation 253 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_13" [amix.cpp:66]   --->   Operation 253 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 13)> <Delay = 0.00>
+ST_3 : Operation 254 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_12" [amix.cpp:66]   --->   Operation 254 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 12)> <Delay = 0.00>
+ST_3 : Operation 255 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_11" [amix.cpp:66]   --->   Operation 255 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 11)> <Delay = 0.00>
+ST_3 : Operation 256 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_10" [amix.cpp:66]   --->   Operation 256 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 10)> <Delay = 0.00>
+ST_3 : Operation 257 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_9" [amix.cpp:66]   --->   Operation 257 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 9)> <Delay = 0.00>
+ST_3 : Operation 258 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_8" [amix.cpp:66]   --->   Operation 258 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 8)> <Delay = 0.00>
+ST_3 : Operation 259 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_7" [amix.cpp:66]   --->   Operation 259 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 7)> <Delay = 0.00>
+ST_3 : Operation 260 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_6" [amix.cpp:66]   --->   Operation 260 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 6)> <Delay = 0.00>
+ST_3 : Operation 261 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_5" [amix.cpp:66]   --->   Operation 261 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 5)> <Delay = 0.00>
+ST_3 : Operation 262 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_4" [amix.cpp:66]   --->   Operation 262 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 4)> <Delay = 0.00>
+ST_3 : Operation 263 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_3" [amix.cpp:66]   --->   Operation 263 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 3)> <Delay = 0.00>
+ST_3 : Operation 264 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_2" [amix.cpp:66]   --->   Operation 264 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 2)> <Delay = 0.00>
+ST_3 : Operation 265 [1/1] (0.00ns)   --->   "%store_ln66 = store i32 %phi_ln66, i32 %shift_reg_1" [amix.cpp:66]   --->   Operation 265 'store' 'store_ln66' <Predicate = (!tmp & !icmp_ln63 & trunc_ln57 == 1)> <Delay = 0.00>
+ST_3 : Operation 266 [1/1] (1.58ns)   --->   "%br_ln0 = br void"   --->   Operation 266 'br' 'br_ln0' <Predicate = (!tmp & !icmp_ln63)> <Delay = 1.58>
+ST_3 : Operation 267 [1/1] (0.00ns)   --->   "%phi_ln69 = phi i6 0, void, i6 %trunc_ln57, void %branch50" [amix.cpp:69]   --->   Operation 267 'phi' 'phi_ln69' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 268 [1/1] (1.87ns)   --->   "%add_ln57 = add i7 %i, i7 127" [amix.cpp:57]   --->   Operation 268 'add' 'add_ln57' <Predicate = (!tmp)> <Delay = 1.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln69 = zext i6 %phi_ln69" [amix.cpp:69]   --->   Operation 269 'zext' 'zext_ln69' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 270 [1/1] (0.00ns)   --->   "%num_lp_addr = getelementptr i32 %num_lp, i32 0, i32 %zext_ln69" [amix.cpp:69]   --->   Operation 270 'getelementptr' 'num_lp_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 271 [2/2] (3.25ns)   --->   "%num_lp_load = load i6 %num_lp_addr" [amix.cpp:69]   --->   Operation 271 'load' 'num_lp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+ST_3 : Operation 272 [1/1] (0.00ns)   --->   "%num_bp_addr = getelementptr i32 %num_bp, i32 0, i32 %zext_ln69" [amix.cpp:70]   --->   Operation 272 'getelementptr' 'num_bp_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 273 [2/2] (3.25ns)   --->   "%num_bp_load = load i6 %num_bp_addr" [amix.cpp:70]   --->   Operation 273 'load' 'num_bp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+ST_3 : Operation 274 [1/1] (0.00ns)   --->   "%num_hp_addr = getelementptr i32 %num_hp, i32 0, i32 %zext_ln69" [amix.cpp:71]   --->   Operation 274 'getelementptr' 'num_hp_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 275 [2/2] (3.25ns)   --->   "%num_hp_load = load i6 %num_hp_addr" [amix.cpp:71]   --->   Operation 275 'load' 'num_hp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 276 [1/1] (0.00ns)   --->   "%empty_13 = phi i32 %sample_in_read, void, i32 %phi_ln66, void %branch50" [amix.cpp:2]   --->   Operation 276 'phi' 'empty_13' <Predicate = (!tmp)> <Delay = 0.00>
+ST_4 : Operation 277 [1/2] (3.25ns)   --->   "%num_lp_load = load i6 %num_lp_addr" [amix.cpp:69]   --->   Operation 277 'load' 'num_lp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+ST_4 : Operation 278 [1/2] (3.25ns)   --->   "%num_bp_load = load i6 %num_bp_addr" [amix.cpp:70]   --->   Operation 278 'load' 'num_bp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+ST_4 : Operation 279 [1/2] (3.25ns)   --->   "%num_hp_load = load i6 %num_hp_addr" [amix.cpp:71]   --->   Operation 279 'load' 'num_hp_load' <Predicate = (!tmp)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 51> <ROM>
+
+State 5 <SV = 4> <Delay = 5.70>
+ST_5 : Operation 280 [4/4] (5.70ns)   --->   "%mul = fmul i32 %empty_13, i32 %num_lp_load" [amix.cpp:69]   --->   Operation 280 'fmul' 'mul' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 5.70>
+ST_6 : Operation 281 [3/4] (5.70ns)   --->   "%mul = fmul i32 %empty_13, i32 %num_lp_load" [amix.cpp:69]   --->   Operation 281 'fmul' 'mul' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 282 [4/4] (5.70ns)   --->   "%mul4 = fmul i32 %empty_13, i32 %num_bp_load" [amix.cpp:70]   --->   Operation 282 'fmul' 'mul4' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 5.70>
+ST_7 : Operation 283 [2/4] (5.70ns)   --->   "%mul = fmul i32 %empty_13, i32 %num_lp_load" [amix.cpp:69]   --->   Operation 283 'fmul' 'mul' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 284 [3/4] (5.70ns)   --->   "%mul4 = fmul i32 %empty_13, i32 %num_bp_load" [amix.cpp:70]   --->   Operation 284 'fmul' 'mul4' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 285 [4/4] (5.70ns)   --->   "%mul5 = fmul i32 %empty_13, i32 %num_hp_load" [amix.cpp:71]   --->   Operation 285 'fmul' 'mul5' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 5.70>
+ST_8 : Operation 286 [1/4] (5.70ns)   --->   "%mul = fmul i32 %empty_13, i32 %num_lp_load" [amix.cpp:69]   --->   Operation 286 'fmul' 'mul' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 287 [2/4] (5.70ns)   --->   "%mul4 = fmul i32 %empty_13, i32 %num_bp_load" [amix.cpp:70]   --->   Operation 287 'fmul' 'mul4' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 288 [3/4] (5.70ns)   --->   "%mul5 = fmul i32 %empty_13, i32 %num_hp_load" [amix.cpp:71]   --->   Operation 288 'fmul' 'mul5' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 7.25>
+ST_9 : Operation 289 [5/5] (7.25ns)   --->   "%sample_lp_2 = fadd i32 %sample_lp, i32 %mul" [amix.cpp:69]   --->   Operation 289 'fadd' 'sample_lp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 290 [1/4] (5.70ns)   --->   "%mul4 = fmul i32 %empty_13, i32 %num_bp_load" [amix.cpp:70]   --->   Operation 290 'fmul' 'mul4' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 291 [2/4] (5.70ns)   --->   "%mul5 = fmul i32 %empty_13, i32 %num_hp_load" [amix.cpp:71]   --->   Operation 291 'fmul' 'mul5' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 14.5>
+ST_10 : Operation 292 [4/5] (7.25ns)   --->   "%sample_lp_2 = fadd i32 %sample_lp, i32 %mul" [amix.cpp:69]   --->   Operation 292 'fadd' 'sample_lp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 293 [5/5] (7.25ns)   --->   "%sample_bp_2 = fadd i32 %sample_bp, i32 %mul4" [amix.cpp:70]   --->   Operation 293 'fadd' 'sample_bp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 294 [1/4] (5.70ns)   --->   "%mul5 = fmul i32 %empty_13, i32 %num_hp_load" [amix.cpp:71]   --->   Operation 294 'fmul' 'mul5' <Predicate = (!tmp)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 14.5>
+ST_11 : Operation 295 [3/5] (7.25ns)   --->   "%sample_lp_2 = fadd i32 %sample_lp, i32 %mul" [amix.cpp:69]   --->   Operation 295 'fadd' 'sample_lp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 296 [4/5] (7.25ns)   --->   "%sample_bp_2 = fadd i32 %sample_bp, i32 %mul4" [amix.cpp:70]   --->   Operation 296 'fadd' 'sample_bp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 297 [5/5] (7.25ns)   --->   "%sample_hp_2 = fadd i32 %sample_hp, i32 %mul5" [amix.cpp:71]   --->   Operation 297 'fadd' 'sample_hp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 14.5>
+ST_12 : Operation 298 [2/5] (7.25ns)   --->   "%sample_lp_2 = fadd i32 %sample_lp, i32 %mul" [amix.cpp:69]   --->   Operation 298 'fadd' 'sample_lp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 299 [3/5] (7.25ns)   --->   "%sample_bp_2 = fadd i32 %sample_bp, i32 %mul4" [amix.cpp:70]   --->   Operation 299 'fadd' 'sample_bp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 300 [4/5] (7.25ns)   --->   "%sample_hp_2 = fadd i32 %sample_hp, i32 %mul5" [amix.cpp:71]   --->   Operation 300 'fadd' 'sample_hp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 14.5>
+ST_13 : Operation 301 [1/5] (7.25ns)   --->   "%sample_lp_2 = fadd i32 %sample_lp, i32 %mul" [amix.cpp:69]   --->   Operation 301 'fadd' 'sample_lp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 302 [2/5] (7.25ns)   --->   "%sample_bp_2 = fadd i32 %sample_bp, i32 %mul4" [amix.cpp:70]   --->   Operation 302 'fadd' 'sample_bp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 303 [3/5] (7.25ns)   --->   "%sample_hp_2 = fadd i32 %sample_hp, i32 %mul5" [amix.cpp:71]   --->   Operation 303 'fadd' 'sample_hp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 14.5>
+ST_14 : Operation 304 [1/5] (7.25ns)   --->   "%sample_bp_2 = fadd i32 %sample_bp, i32 %mul4" [amix.cpp:70]   --->   Operation 304 'fadd' 'sample_bp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 305 [2/5] (7.25ns)   --->   "%sample_hp_2 = fadd i32 %sample_hp, i32 %mul5" [amix.cpp:71]   --->   Operation 305 'fadd' 'sample_hp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 14.5>
+ST_15 : Operation 306 [1/5] (7.25ns)   --->   "%sample_hp_2 = fadd i32 %sample_hp, i32 %mul5" [amix.cpp:71]   --->   Operation 306 'fadd' 'sample_hp_2' <Predicate = (!tmp)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 307 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 307 'br' 'br_ln0' <Predicate = (!tmp)> <Delay = 0.00>
+
+State 16 <SV = 2> <Delay = 5.70>
+ST_16 : Operation 308 [4/4] (5.70ns)   --->   "%sample_lp_1 = fmul i32 %sample_lp, i32 %gain_lp_read" [amix.cpp:75]   --->   Operation 308 'fmul' 'sample_lp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 309 [4/4] (5.70ns)   --->   "%sample_bp_1 = fmul i32 %sample_bp, i32 %gain_bp_read" [amix.cpp:76]   --->   Operation 309 'fmul' 'sample_bp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 3> <Delay = 5.70>
+ST_17 : Operation 310 [3/4] (5.70ns)   --->   "%sample_lp_1 = fmul i32 %sample_lp, i32 %gain_lp_read" [amix.cpp:75]   --->   Operation 310 'fmul' 'sample_lp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 311 [3/4] (5.70ns)   --->   "%sample_bp_1 = fmul i32 %sample_bp, i32 %gain_bp_read" [amix.cpp:76]   --->   Operation 311 'fmul' 'sample_bp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 4> <Delay = 5.70>
+ST_18 : Operation 312 [2/4] (5.70ns)   --->   "%sample_lp_1 = fmul i32 %sample_lp, i32 %gain_lp_read" [amix.cpp:75]   --->   Operation 312 'fmul' 'sample_lp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 313 [2/4] (5.70ns)   --->   "%sample_bp_1 = fmul i32 %sample_bp, i32 %gain_bp_read" [amix.cpp:76]   --->   Operation 313 'fmul' 'sample_bp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 5> <Delay = 5.70>
+ST_19 : Operation 314 [1/4] (5.70ns)   --->   "%sample_lp_1 = fmul i32 %sample_lp, i32 %gain_lp_read" [amix.cpp:75]   --->   Operation 314 'fmul' 'sample_lp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 315 [1/4] (5.70ns)   --->   "%sample_bp_1 = fmul i32 %sample_bp, i32 %gain_bp_read" [amix.cpp:76]   --->   Operation 315 'fmul' 'sample_bp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 6> <Delay = 7.25>
+ST_20 : Operation 316 [5/5] (7.25ns)   --->   "%add1 = fadd i32 %sample_lp_1, i32 %sample_bp_1" [amix.cpp:79]   --->   Operation 316 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 7> <Delay = 7.25>
+ST_21 : Operation 317 [4/4] (5.70ns)   --->   "%sample_hp_1 = fmul i32 %sample_hp, i32 %gain_hp_read" [amix.cpp:77]   --->   Operation 317 'fmul' 'sample_hp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 318 [4/5] (7.25ns)   --->   "%add1 = fadd i32 %sample_lp_1, i32 %sample_bp_1" [amix.cpp:79]   --->   Operation 318 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 8> <Delay = 7.25>
+ST_22 : Operation 319 [3/4] (5.70ns)   --->   "%sample_hp_1 = fmul i32 %sample_hp, i32 %gain_hp_read" [amix.cpp:77]   --->   Operation 319 'fmul' 'sample_hp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 320 [3/5] (7.25ns)   --->   "%add1 = fadd i32 %sample_lp_1, i32 %sample_bp_1" [amix.cpp:79]   --->   Operation 320 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 9> <Delay = 7.25>
+ST_23 : Operation 321 [2/4] (5.70ns)   --->   "%sample_hp_1 = fmul i32 %sample_hp, i32 %gain_hp_read" [amix.cpp:77]   --->   Operation 321 'fmul' 'sample_hp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 322 [2/5] (7.25ns)   --->   "%add1 = fadd i32 %sample_lp_1, i32 %sample_bp_1" [amix.cpp:79]   --->   Operation 322 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 10> <Delay = 7.25>
+ST_24 : Operation 323 [1/4] (5.70ns)   --->   "%sample_hp_1 = fmul i32 %sample_hp, i32 %gain_hp_read" [amix.cpp:77]   --->   Operation 323 'fmul' 'sample_hp_1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 324 [1/5] (7.25ns)   --->   "%add1 = fadd i32 %sample_lp_1, i32 %sample_bp_1" [amix.cpp:79]   --->   Operation 324 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 11> <Delay = 7.25>
+ST_25 : Operation 325 [5/5] (7.25ns)   --->   "%add2 = fadd i32 %add1, i32 %sample_hp_1" [amix.cpp:79]   --->   Operation 325 'fadd' 'add2' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 12> <Delay = 7.25>
+ST_26 : Operation 326 [4/5] (7.25ns)   --->   "%add2 = fadd i32 %add1, i32 %sample_hp_1" [amix.cpp:79]   --->   Operation 326 'fadd' 'add2' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 13> <Delay = 7.25>
+ST_27 : Operation 327 [3/5] (7.25ns)   --->   "%add2 = fadd i32 %add1, i32 %sample_hp_1" [amix.cpp:79]   --->   Operation 327 'fadd' 'add2' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 14> <Delay = 7.25>
+ST_28 : Operation 328 [2/5] (7.25ns)   --->   "%add2 = fadd i32 %add1, i32 %sample_hp_1" [amix.cpp:79]   --->   Operation 328 'fadd' 'add2' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 15> <Delay = 7.25>
+ST_29 : Operation 329 [1/5] (7.25ns)   --->   "%add2 = fadd i32 %add1, i32 %sample_hp_1" [amix.cpp:79]   --->   Operation 329 'fadd' 'add2' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 330 [1/1] (0.00ns)   --->   "%ret_ln79 = ret i32 %add2" [amix.cpp:79]   --->   Operation 330 'ret' 'ret_ln79' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i', amix.cpp:57) with incoming values : ('add_ln57', amix.cpp:57) [84]  (1.59 ns)
+
+ <State 2>: 7.26ns
+The critical path consists of the following:
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 3>: 4.84ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('phi_ln69', amix.cpp:69) with incoming values : ('trunc_ln57', amix.cpp:57) [406]  (1.59 ns)
+	'phi' operation ('phi_ln69', amix.cpp:69) with incoming values : ('trunc_ln57', amix.cpp:57) [406]  (0 ns)
+	'getelementptr' operation ('num_lp_addr', amix.cpp:69) [409]  (0 ns)
+	'load' operation ('num_lp_load', amix.cpp:69) on array 'num_lp' [410]  (3.25 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('num_lp_load', amix.cpp:69) on array 'num_lp' [410]  (3.25 ns)
+
+ <State 5>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', amix.cpp:69) [411]  (5.7 ns)
+
+ <State 6>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', amix.cpp:69) [411]  (5.7 ns)
+
+ <State 7>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', amix.cpp:69) [411]  (5.7 ns)
+
+ <State 8>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', amix.cpp:69) [411]  (5.7 ns)
+
+ <State 9>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 10>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 11>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 12>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 13>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+ <State 14>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_bp', amix.cpp:70) [416]  (7.26 ns)
+	'phi' operation ('sample_bp') with incoming values : ('sample_bp', amix.cpp:70) [86]  (0 ns)
+	'fadd' operation ('sample_bp', amix.cpp:70) [416]  (7.26 ns)
+
+ <State 15>: 14.5ns
+The critical path consists of the following:
+	'fadd' operation ('sample_hp', amix.cpp:71) [420]  (7.26 ns)
+	'phi' operation ('sample_hp') with incoming values : ('sample_hp', amix.cpp:71) [85]  (0 ns)
+	'fadd' operation ('sample_hp', amix.cpp:71) [420]  (7.26 ns)
+
+ <State 16>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('sample_lp', amix.cpp:75) [423]  (5.7 ns)
+
+ <State 17>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('sample_lp', amix.cpp:75) [423]  (5.7 ns)
+
+ <State 18>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('sample_lp', amix.cpp:75) [423]  (5.7 ns)
+
+ <State 19>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('sample_lp', amix.cpp:75) [423]  (5.7 ns)
+
+ <State 20>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add1', amix.cpp:79) [426]  (7.26 ns)
+
+ <State 21>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add1', amix.cpp:79) [426]  (7.26 ns)
+
+ <State 22>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add1', amix.cpp:79) [426]  (7.26 ns)
+
+ <State 23>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add1', amix.cpp:79) [426]  (7.26 ns)
+
+ <State 24>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add1', amix.cpp:79) [426]  (7.26 ns)
+
+ <State 25>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add2', amix.cpp:79) [427]  (7.26 ns)
+
+ <State 26>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add2', amix.cpp:79) [427]  (7.26 ns)
+
+ <State 27>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add2', amix.cpp:79) [427]  (7.26 ns)
+
+ <State 28>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add2', amix.cpp:79) [427]  (7.26 ns)
+
+ <State 29>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add2', amix.cpp:79) [427]  (7.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

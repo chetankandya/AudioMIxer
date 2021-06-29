@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jun 20 14:11:52 2021
+# Process ID: 739635
+# Current directory: /home/hk19197/awesomeaudiomixer
+# Command line: vivado -mode tcl -source rtl.tcl
+# Log file: /home/hk19197/awesomeaudiomixer/vivado.log
+# Journal file: /home/hk19197/awesomeaudiomixer/vivado.jou
+#-----------------------------------------------------------
+source rtl.tcl
+# open_project rtl-proj/rtl.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/hk19197/awesomeaudiomixer/hls-proj'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'overlay.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+overlay_amix_0
+
+# upgrade_ip [get_ips]
+Reading block design file </home/hk19197/awesomeaudiomixer/rtl-proj/rtl.srcs/sources_1/bd/overlay/overlay.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - ps
+Adding component instance block -- xilinx.com:hls:amix:1.0 - amix
+Successfully read diagram <overlay> from block design file </home/hk19197/awesomeaudiomixer/rtl-proj/rtl.srcs/sources_1/bd/overlay/overlay.bd>
+Upgrading '/home/hk19197/awesomeaudiomixer/rtl-proj/rtl.srcs/sources_1/bd/overlay/overlay.bd'
+INFO: [IP_Flow 19-3422] Upgraded overlay_amix_0 (Amix 1.0) from revision 2106201407 to revision 2106201411
+Wrote  : </home/hk19197/awesomeaudiomixer/rtl-proj/rtl.srcs/sources_1/bd/overlay/overlay.bd> 
+# reset_runs impl_1
+# launch_runs impl_1 -to_step write_bitstream
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/ps/M_AXI_GP0_ACLK
+/amix/ap_clk
+
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design /home/hk19197/awesomeaudiomixer/rtl-proj/rtl.srcs/sources_1/bd/overlay/overlay.bd 
+INFO: [IP_Flow 19-7066] Running IP cache check for IP overlay_amix_0
+INFO: [IP_Flow 19-7066] Running IP cache check for IP overlay_ps_0
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 20 14:12:22 2021...

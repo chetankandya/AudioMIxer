@@ -1,0 +1,113 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_addr64=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 98.509 MB.
+INFO: [HLS 200-10] Analyzing design file 'amix.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.71 seconds. CPU system time: 0.38 seconds. Elapsed time: 0.55 seconds; current allocated memory: 99.801 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+WARNING: [HLS 214-167] The program may have out of bound array access (amix.cpp:64:17)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.66 seconds. CPU system time: 0.56 seconds. Elapsed time: 5.54 seconds; current allocated memory: 100.863 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 100.864 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 102.154 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 101.359 MB.
+WARNING: [HLS 200-914] Completely partitioning array 'shift_reg'  accessed through non-constant indices on dimension 1 (amix.cpp:66:4), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'shift_reg'  in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 122.944 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 118.959 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'amix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'amix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_57_1'.
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 1) between 'fadd' operation ('sample_hp', amix.cpp:71) and 'fadd' operation ('sample_hp', amix.cpp:71).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 2) between 'fadd' operation ('sample_hp', amix.cpp:71) and 'fadd' operation ('sample_hp', amix.cpp:71).
+WARNING: [HLS 200-881] Unable to enforce a carried constraint (II = 3) between 'fadd' operation ('sample_hp', amix.cpp:71) and 'fadd' operation ('sample_hp', amix.cpp:71).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 14, loop 'VITIS_LOOP_57_1'
+WARNING: [HLS 200-871] Estimated clock period (14.512ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'amix' consists of the following:	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+	'phi' operation ('sample_lp') with incoming values : ('sample_lp', amix.cpp:69) [87]  (0 ns)
+	'fadd' operation ('sample_lp', amix.cpp:69) [412]  (7.26 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.5 seconds; current allocated memory: 120.142 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.46 seconds; current allocated memory: 121.513 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'amix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amix/sample_in' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amix/gain_lp' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amix/gain_bp' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amix/gain_hp' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'amix' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'shift_reg_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_23' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_24' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_25' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_26' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_27' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_28' is power-on initialization.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
